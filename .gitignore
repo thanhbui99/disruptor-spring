@@ -43,5 +43,5 @@ SConstruct
 *.iws
 *-gc.log
 
-target
-.idea
+/target/**
+.idea/**
