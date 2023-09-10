@@ -1,12 +1,12 @@
 package vn.com.disruptorspring.memdb;
 
 /**
- * 商品内存数据库
+ * Product memory database
  */
 public interface ItemRepository {
 
-  void put(Item item);
+    void put(Item item);
 
-  Item get(Long id);
+    Item get(Long id);
 
 }

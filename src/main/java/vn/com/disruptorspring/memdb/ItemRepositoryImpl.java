@@ -8,16 +8,16 @@ import java.util.Map;
 @Component
 public class ItemRepositoryImpl implements ItemRepository {
 
-  private final Map<Long, Item> data = new HashMap<>(1000);
+    private final Map<Long, Item> data = new HashMap<>(1000);
 
-  @Override
-  public void put(Item item) {
-    data.put(item.getId(), item);
-  }
+    @Override
+    public void put(Item item) {
+        data.put(item.getId(), item);
+    }
 
-  @Override
-  public Item get(Long id) {
-    return data.get(id);
-  }
+    @Override
+    public Item get(Long id) {
+        return data.get(id);
+    }
 
 }

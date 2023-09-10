@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
+		<javatuples.version>1.2</javatuples.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -88,7 +89,12 @@
 			<artifactId>gson</artifactId>
 			<version>2.10.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.javatuples</groupId>
+			<artifactId>javatuples</artifactId>
+			<version>${javatuples.version}</version>
 
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

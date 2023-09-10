@@ -13,41 +13,41 @@ import vn.com.disruptorspring.utilities.JSON;
 import java.util.List;
 
 /**
- * 启动时，将数据库中的数据，加载到内存中
+ * On startup，Put the data in the database，load into memory
  */
 @Component
 public class ItemDataStartupLoader extends DataStartupLoader {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(ItemDataStartupLoader.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ItemDataStartupLoader.class);
 
-  private JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
-  private ItemRepository itemRepository;
+    private ItemRepository itemRepository;
 
-  @Override
-  protected void doLoad() {
-    List<Item> items = jdbcTemplate.query("select id, amount from ITEM", (rs, rowNum) -> new Item(rs.getLong(1), rs.getInt(2)));
+    @Override
+    protected void doLoad() {
+        List<Item> items = jdbcTemplate.query("select id, INVENTORY from ITEM", (rs, rowNum) -> new Item(rs.getLong(1), rs.getInt(2)));
 
-    items.forEach(item -> {
-      itemRepository.put(item);
-      LOGGER.info("Load Item from database: {}", JSON.toJson(item));
-    });
+        items.forEach(item -> {
+            itemRepository.put(item);
+            LOGGER.info("Load Item from database: {}", JSON.toJson(item));
+        });
 
-  }
+    }
 
-  @Override
-  public int getPhase() {
-    return Ordered.LOWEST_PRECEDENCE;
-  }
+    @Override
+    public int getPhase() {
+        return Ordered.LOWEST_PRECEDENCE;
+    }
 
-  @Autowired
-  public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-    this.jdbcTemplate = jdbcTemplate;
-  }
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
-  @Autowired
-  public void setItemRepository(ItemRepository itemRepository) {
-    this.itemRepository = itemRepository;
-  }
+    @Autowired
+    public void setItemRepository(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 
 }
