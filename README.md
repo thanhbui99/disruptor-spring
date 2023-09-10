@@ -1,2 +1,2 @@
 # disruptor-spring
-disruptor spring for order on one instance server
+Order processing with disruptor-spring on a server instance

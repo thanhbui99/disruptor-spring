@@ -42,3 +42,6 @@ SConstruct
 *.ipr
 *.iws
 *-gc.log
+
+target
+.idea
