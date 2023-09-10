@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
-import vn.com.disruptorspring.cache.ResponseCache;
+import vn.com.disruptorspring.cache.mem.ResponseCache;
 import vn.com.disruptorspring.model.response.ResponseDto;
 
 @Component

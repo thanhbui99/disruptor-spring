@@ -1,4 +1,4 @@
-package vn.com.disruptorspring.cache;
+package vn.com.disruptorspring.cache.mem;
 
 
 import vn.com.disruptorspring.model.response.ResponseDto;
